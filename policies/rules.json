@@ -1,0 +1,10 @@
+{
+  "version": "2026-10",
+  "regretDays": 7,
+  "exchangeDays": 30,
+  "defectDaysNonDurable": 30,
+  "defectDaysDurable": 90,
+  "damagedOnArrivalDays": 7,
+  "durableCategories": ["laptops", "smartphones", "tablets", "mobile-accessories", "furniture", "mens-watches", "womens-watches", "kitchen-appliances"],
+  "sealedOnlyForRegretCategories": ["beauty", "skin-care", "fragrances"]
+}
