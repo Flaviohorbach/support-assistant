@@ -73,7 +73,12 @@ async function migrate(db: Db) {
 }
 
 async function connect(): Promise<Db> {
-  const url = process.env.DATABASE_URL;
+  // The Vercel + Neon integration may also expose the URL as POSTGRES_URL.
+  const url = process.env.DATABASE_URL ?? process.env.POSTGRES_URL;
+  if (!url && process.env.VERCEL) {
+    // Serverless file systems are read-only: a local PGlite cannot work there.
+    throw new Error("DATABASE_URL não configurada. Conecte um banco Neon ao projeto na Vercel e faça o redeploy.");
+  }
   if (url) {
     const { neon } = await import("@neondatabase/serverless");
     const sql = neon(url);
