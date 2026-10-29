@@ -14,6 +14,8 @@ customer message
   → model + tools scoped to this customer
 ```
 
+**Live demo: [support-assistant-chi.vercel.app](https://support-assistant-chi.vercel.app)**
+
 Built with Next.js 16, the Vercel AI SDK 7, Gemini, and Postgres (Neon in production, PGlite locally).
 
 ## Policy as data, decision in code, explanation by the model
